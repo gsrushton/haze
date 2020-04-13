@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -x
+
+openssl genrsa -out localhost.key 2048
+
+# openssl req \
+#   -reqexts SAN \
+#   -extfile localhost.conf \
+#   -out localhost.csr
+
+openssl req \
+  -new \
+  -sha256 \
+  -key localhost.key \
+  -config localhost.conf \
+  -out localhost.csr
+
+openssl x509 \
+  -req \
+  -in localhost.csr \
+  -CA ca.crt \
+  -CAkey ca.key \
+  -set_serial 0x$(openssl rand -hex 16) \
+  -days 500 \
+  -sha256 \
+  -extensions req_ext \
+  -extfile localhost.conf \
+  -out localhost.crt

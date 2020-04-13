@@ -1,0 +1,16 @@
+[package]
+name = "haze-core"
+version = "0.1.0"
+authors = ["Graham Rushton <gsrushton@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+base64 = "0.12"
+bincode = "1.2.1"
+failure = "0.1.7"
+futures = "0.3.4"
+hmac = "0.7.1"
+rand = "0.7.3"
+serde = { version = "1.0", features = ["derive"] }
+sha2 = "0.8.1"
+tokio = { version = "0.2", features = ["full"] }

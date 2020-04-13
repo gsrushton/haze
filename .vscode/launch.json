@@ -1,0 +1,42 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "haze-beacon",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/haze-beacon",
+      "args": [
+        "--ssl-cert", "${workspaceFolder}/tools/ssl/localhost.crt",
+        "--ssl-key", "${workspaceFolder}/tools/ssl/localhost.key"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [
+        {"name": "HAZE_LOG", "value": "debug"}
+      ],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    },
+    {
+      "name": "haze-node",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/target/debug/haze-node",
+      "args": [
+        "--ssl-root", "${workspaceFolder}/tools/ssl/ca.crt",
+        "127.0.0.1"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [
+        {"name": "HAZE_LOG", "value": "debug"}
+      ],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    }
+  ]
+}

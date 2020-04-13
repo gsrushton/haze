@@ -1,0 +1,11 @@
+nodes:
+  5UsjhR7COaxIPIG0NFdM02IRhRLPnbILruVY2xid6AM=:
+  qr6uOh4+UqZEXiokOkVBcK3mDs+kFwO8dijPsteMLwc=:
+    nodes:
+      - 5UsjhR7COaxIPIG0NFdM02IRhRLPnbILruVY2xid6AM
+  qr6uOh4+UqZEXiokOkVBcK3mDs+kFwO8dijPsteMLwc=:
+    nodes:
+      - 5UsjhR7COaxIPIG0NFdM02IRhRLPnbILruVY2xid6AM
+interface:
+  ssl_cert: tools/ssl/localhost.crt
+  ssl_key: tools/ssl/localhost.key

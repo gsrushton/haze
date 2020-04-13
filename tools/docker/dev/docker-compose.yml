@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  devbox:
+    build:
+      context: .
+      args:
+        USER: ${USER:?USER environment variable must be set}
+        UID: ${UID:?UID environment variable must be set}
+    volumes:
+      - ${WORKSPACE:?WORKSPACE environment variable must be set}:/home/${USER}/workspace
+    hostname: haze-devbox
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
